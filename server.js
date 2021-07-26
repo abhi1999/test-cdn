@@ -5,7 +5,7 @@ var path = require('path');
 http.createServer(function (request, response) {
     // console.log(request)
     const headers = {
-        "Access-Control-Allow-Origin": false && request && request.headers && request.headers.origin ?request.headers.origin:"*",
+        "Access-Control-Allow-Origin":  request && request.headers && request.headers.origin ?request.headers.origin:"*",
         "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
         "Access-Control-Allow-Headers":"access-control-allow-origin,mode",
        /* "Access-Control-Max-Age": 2592000, // 30 days
