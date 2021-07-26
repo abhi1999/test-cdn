@@ -10,9 +10,9 @@ http.createServer(function (request, response) {
         /** add other headers as per requirement */
       };
   
-      if (req.method === "OPTIONS") {
-        res.writeHead(204, headers);
-        res.end();
+      if (request.method === "OPTIONS") {
+        response.writeHead(204, headers);
+        response.end();
         return;
       }
 
