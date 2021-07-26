@@ -3,10 +3,12 @@ var fs = require('fs');
 var path = require('path');
 
 http.createServer(function (request, response) {
+    // console.log(request)
     const headers = {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "OPTIONS, POST, GET",
-        "Access-Control-Max-Age": 2592000, // 30 days
+        "Access-Control-Allow-Origin": false && request && request.headers && request.headers.origin ?request.headers.origin:"*",
+        "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+        "Access-Control-Allow-Headers":"Origin, X-Requested-With, Content-Type, Accept",
+       /* "Access-Control-Max-Age": 2592000, // 30 days
         /** add other headers as per requirement */
       };
   
